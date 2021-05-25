@@ -1,28 +1,33 @@
 <!-- db.html
-     Use a form to collect a query against the Pokemon Daycare database.
-     Call the PHP script, db.php to perform
-     the given query and display the results
-    -->
+    Isabel Ovalles
+    CPSC 3300
+    Pokemon Daycare Database
+-->
     <html>
     <head><title> Pokemon Daycare Database </title>
+    <style>
+      body{
+        font-family: 'Verdana', sans-serif;
+      }
+    </style>
     </head>
-    <body style="background-color:grey;">
-      <!-- Find pokeball hex codes for colors
-        -->
-    <p>
+    <body style="background-color:#E8A87C;">
 
-    <img src = "https://i.kym-cdn.com/entries/icons/original/000/031/502/Untitled-2.jpg" alt = "Pikachu" >
-    <br/>
+    <p style = text-align: center;">
     Please enter your query:
-    <br />
-
+    <br/>
     <form action  = "http://css1.seattleu.edu/~ovallesisabe/dbweb/db.php" method = "post">
         <textarea  rows = "5"  cols = "40" name = "query" ></textarea>
-        <br /><br />
+        <br/><br/>
         <input type = "reset"  value = "Reset" />
         <input type = "submit"  value = "Submit request" />
     </form>
-
     </p>
+
+    <p>
+    <img src = "https://i.kym-cdn.com/entries/icons/original/000/031/502/Untitled-2.jpg" alt = "Pikachu" >
+    <br/>
+    </p>
+
     </body>
     </html>
