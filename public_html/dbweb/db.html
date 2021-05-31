@@ -5,29 +5,72 @@
 -->
     <html>
     <head><title> Pokemon Daycare Database </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       body{
         font-family: 'Verdana', sans-serif;
       }
+      .button {
+          border: none;
+          color: black;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+
+        .content {
+          max-width: 500px;
+          margin: auto;
+          background: white;
+          padding: 10px;
+        }
+
+        .region {background-color:#4CAF50;} /* Green */
+        .egg_group {background-color:#008CBA;} /* Blue */
+        .pokemon {background-color:#EE1515;} /* Red */
+        .eggs {background-color:#F0F0F0;} /* White*/
     </style>
     </head>
     <body style="background-color:#E8A87C;">
 
+    <div class = "content">
+
+    <h2> Quick Information </h2>
+      <form action ="http://css1.seattleu.edu/~ovallesisabe/dbweb/dbButton.php" method = "post">
+        <button name = "query" class="button region" value = "select * from region">Regions</button>
+      </form>
+      <form action ="http://css1.seattleu.edu/~ovallesisabe/dbweb/dbButton.php" method = "post">
+        <button name = "query" class="button egg_group" value = "select * from eggGroup">Egg Groups</button>
+      </form>
+      <form action ="http://css1.seattleu.edu/~ovallesisabe/dbweb/dbButton.php" method = "post">
+        <button name = "query" class="button pokemon" value = "select * from pokemon">Pokemon</button>
+      </form>
+      <form action ="http://css1.seattleu.edu/~ovallesisabe/dbweb/dbButton.php" method = "post">
+        <button name = "query" class="button egg" value = "select * from egg">Eggs</button>
+      </form>
+    <!--
+          button for eggs
+          button for types
+      -->
+
+    </br>
+
+    <h2> Advanced Search </h2>
     <p style = text-align: center;">
     Please enter your query:
     <br/>
-    <form action  = "http://css1.seattleu.edu/~ovallesisabe/dbweb/db.php" method = "post">
+    <form action  = "http://css1.seattleu.edu/~ovallesisabe/dbweb/dbAdv.php" method = "post">
         <textarea  rows = "5"  cols = "40" name = "query" ></textarea>
         <br/><br/>
         <input type = "reset"  value = "Reset" />
-        <input type = "submit"  value = "Submit request" />
+        <input type = "submit"  value = "Submit Request" />
     </form>
+    <img src = "https://i.kym-cdn.com/entries/icons/original/000/031/502/Untitled-2.jpg" alt = "Pikachu" width = "400" height = "225">
     </p>
-
-    <p>
-    <img src = "https://i.kym-cdn.com/entries/icons/original/000/031/502/Untitled-2.jpg" alt = "Pikachu" >
-    <br/>
-    </p>
-
+    </div>
     </body>
     </html>
