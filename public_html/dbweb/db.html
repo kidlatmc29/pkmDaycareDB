@@ -30,15 +30,17 @@
         }
 
         .region {background-color:#4CAF50;} /* Green */
-        .egg_group {background-color:#008CBA;} /* Blue */
-        .pokemon {background-color:#EE1515;} /* Red */
+        .egg_group {background-color:#88AED0;} /* Blue */
+        .pokemon {background-color:#FF6961;} /* Red */
         .eggs {background-color:#F0F0F0;} /* White*/
+        .stats {background-color:#AFC9CF;} /*Gray*/
+        .pandT {background-color:#CDB7F6;} /*Purple*/
     </style>
     </head>
     <body style="background-color:#E8A87C;">
 
     <div class = "content">
-      <img src = "/img/banner" alt = "pokemon day care banner">
+      <img src = "public_html/dbweb/img/banner.png" alt = "pokemon day care banner">
     <h2> Quick Information </h2>
       <form action ="http://css1.seattleu.edu/~ovallesisabe/dbweb/dbButton.php" method = "post">
         <button name = "query" class="button region" value = "select * from region">Regions</button>
@@ -52,12 +54,16 @@
       <form action ="http://css1.seattleu.edu/~ovallesisabe/dbweb/dbButton.php" method = "post">
         <button name = "query" class="button egg" value = "select * from egg">Eggs</button>
       </form>
-    <!--
-          button for eggs
-          button for types
-      -->
-
+      <form action ="http://css1.seattleu.edu/~ovallesisabe/dbweb/dbButton.php" method = "post">
+        <button name = "query" class="button stats"
+                value = ""> Day Care Statistics</button>
+      </form>
+      <form action ="http://css1.seattleu.edu/~ovallesisabe/dbweb/dbButton.php" method = "post">
+        <button name = "query" class="button pandT"
+                value = ""> Pokemon and their Types </button>
+      </form>
     </br>
+
 
     <h2> Advanced Search </h2>
     <p style = text-align: center;">
