@@ -40,7 +40,6 @@
     <body style="background-color:#E8A87C;">
 
     <div class = "content">
-      <img src = "public_html/dbweb/img/banner.png" alt = "pokemon day care banner">
     <h2> Quick Information </h2>
       <form action ="http://css1.seattleu.edu/~ovallesisabe/dbweb/dbButton.php" method = "post">
         <button name = "query" class="button region" value = "select * from region">Regions</button>
@@ -54,13 +53,14 @@
       <form action ="http://css1.seattleu.edu/~ovallesisabe/dbweb/dbButton.php" method = "post">
         <button name = "query" class="button egg" value = "select * from egg">Eggs</button>
       </form>
-      <form action ="http://css1.seattleu.edu/~ovallesisabe/dbweb/dbButton.php" method = "post">
-        <button name = "query" class="button stats"
-                value = ""> Day Care Statistics</button>
+      <form action ="http://css1.seattleu.edu/~ovallesisabe/dbweb/dbStats.php" method = "post">
+        <button name = "query" class="button stats"> Day Care Statistics</button>
       </form>
       <form action ="http://css1.seattleu.edu/~ovallesisabe/dbweb/dbButton.php" method = "post">
         <button name = "query" class="button pandT"
-                value = ""> Pokemon and their Types </button>
+                value = "select P.Species as Pokemon, T.TypeName as Pokemon_Type
+                         from pokemon as P, ptype as T
+                         where P.DID = T.DID;"> Pokemon and their Types </button>
       </form>
     </br>
 

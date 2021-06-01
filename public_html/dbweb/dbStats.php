@@ -1,11 +1,12 @@
-<!-- dbRegions.php
+<!-- dbStats.php
     Isabel Ovalles
     CPSC 3300
-     A PHP script to access the pokemon daycare database through MySQL from
-     buttons
+     A PHP script to access the pokemon daycare database through MySQL using
+     aggregate functions in queries
 -->
+
 <html>
-<head> <title> Results </title>
+<head> <title> Pokemon Daycare Stats </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body{
@@ -21,13 +22,12 @@ body{
 </head>
 <body style="background-color:#E8A87C;">
 
-<div = "content">
+<div class = "content">
   <p> Back to query page:
     <a style ="color:#222224;"
-      href="http://css1.seattleu.edu/~ovallesisabe/dbweb/db.html">
-      Pokemon Daycare Database</a>
-    </p>
-
+    href="http://css1.seattleu.edu/~ovallesisabe/dbweb/db.html">
+    Pokemon Daycare Database</a>
+  </p>
 <?php
 
 // Connect to MySQL
@@ -51,20 +51,17 @@ if (!$db) {
     exit;
 }
 
-$query = $_POST['query'];
+// array of queries for certain stats of the day care
 
-// Clean up the given query (delete leading and trailing whitespace)
-trim($query);
+$queries = array(
+  0 => "select count(distinct DID) as Total_Pokemon from pokemon"
+);
 
-// remove the extra slashes
-$query = stripslashes($query);
-// print "Striped query is $query <br />";
+$index = 0;
 
-// handle HTML special characters
-$query_html = htmlspecialchars($query);
-print "<p> <b> The query is: </b> " . $query_html . "</p>";
+// Total number of pokemon in the day care
+$query = $queries[1];
 
-// Execute the query
 $result = mysql_query($query);
 if (!$result) {
     print "Error - the query could not be executed";
@@ -73,7 +70,6 @@ if (!$result) {
     exit;
 }
 
-// Get the number of rows in the result
 $num_rows = mysql_num_rows($result);
 print "Number of rows = $num_rows <br />";
 
@@ -83,10 +79,6 @@ print "Number of fields = $num_fields <br />";
 
 // Get the first row
 $row = mysql_fetch_array($result);
-
-// Display the results in a table
-print "<table border='border'><caption> <h2> Query Results </h2> </caption>";
-print "<tr align = 'center'>";
 
 // Produce the column labels
 $keys = array_keys($row);
@@ -112,8 +104,24 @@ for ($row_num = 0; $row_num < $num_rows; $row_num++) {
 
 print "</table>";
 
+
+/*
+// Total Number of Species (no repeats) in the day care
+$query = "SELECT COUNT(distinct Species) as Total_Species
+          FROM pokemon;"
+
+// For each region, find the total number of shinies from it.
+$query = "SELECT R.RName as Region, count(*) as Total_Shinies
+          FROM region as R, pokemon as P
+          WHERE R.RName = P.RName AND P.shiny = &quot;Yes&quot;
+          GROUP BY R.RName;"
+
+// Find the most common type for a pokemon what it's count it
+
+*/
 mysql_close($conn);
 ?>
+
 <p> Back to query page:
 <a style ="color:#222224;"
     href="http://css1.seattleu.edu/~ovallesisabe/dbweb/db.html">

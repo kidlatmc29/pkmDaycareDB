@@ -5,20 +5,30 @@
 -->
 
 <html>
-<head>
+<head> <title> Advance Search Results </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body{
   font-family: 'Verdana', sans-serif;
 }
-<title> Access the Pokemon Daycare Database </title>
+
+.content {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+}
 </style>
 </head>
 <body style="background-color:#E8A87C;">
-<p> Back to query page:
-<a style ="color:#222224;"
+
+<div = "content">
+  <p> Back to query page:
+    <a style ="color:#222224;"
     href="http://css1.seattleu.edu/~ovallesisabe/dbweb/db.html">
     Pokemon Daycare Database</a>
-</p>
+  </p>
+</div>
 <?php
 
 // Connect to MySQL
@@ -105,10 +115,13 @@ print "</table>";
 
 mysql_close($conn);
 ?>
+
+<div = "content">
 <p> Back to query page:
 <a style ="color:#222224;"
     href="http://css1.seattleu.edu/~ovallesisabe/dbweb/db.html">
     Pokemon Daycare Database</a>
 </p>
+</div>
 </body>
 </html>
