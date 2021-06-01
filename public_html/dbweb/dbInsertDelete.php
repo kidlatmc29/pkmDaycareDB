@@ -1,12 +1,11 @@
 <!-- dbStats.php
     Isabel Ovalles
     CPSC 3300
-     A PHP script to access the pokemon daycare database through MySQL using
-     aggregate functions in queries
+     A PHP script to access the pokemon daycare database through MySQL in order to
+     insert and delete tuples
 -->
-
-<html>
-<head> <title> Pokemon Daycare Stats </title>
+html>
+<head> <title> Editing Database </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body{
@@ -51,16 +50,12 @@ if (!$db) {
     exit;
 }
 
-// array of queries for certain stats of the day care
+// strings of queries for inserting or deleteing tuplpes
+$inserting = "";
+$deleting = "";
 
-$queries = array(
-  0 => "select count(distinct DID) as Total_Pokemon from pokemon"
-);
-
-$index = 0;
-
-// Total number of pokemon in the day care
-$query = $queries[0];
+// put an if statement?
+$query = $inserting;
 
 $result = mysql_query($query);
 if (!$result) {
@@ -103,22 +98,6 @@ for ($row_num = 0; $row_num < $num_rows; $row_num++) {
 }
 
 print "</table>";
-
-
-/*
-// Total Number of Species (no repeats) in the day care
-$query = "SELECT COUNT(distinct Species) as Total_Species
-          FROM pokemon;"
-
-// For each region, find the total number of shinies from it.
-$query = "SELECT R.RName as Region, count(*) as Total_Shinies
-          FROM region as R, pokemon as P
-          WHERE R.RName = P.RName AND P.shiny = &quot;Yes&quot;
-          GROUP BY R.RName;"
-
-// Find the most common type for a pokemon what it's count it
-
-*/
 mysql_close($conn);
 ?>
 
