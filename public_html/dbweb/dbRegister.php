@@ -5,7 +5,7 @@
      insert and delete tuples
 -->
 html>
-<head> <title> Editing Database </title>
+<head> <title> Registering </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body{
