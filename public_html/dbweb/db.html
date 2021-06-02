@@ -22,11 +22,33 @@
           cursor: pointer;
         }
 
+      img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
         .content {
-          max-width: 500px;
+          max-width: 700px;
           margin: auto;
           background: white;
           padding: 10px;
+        }
+
+        p {
+          text-align:center
+        }
+
+        h1 {
+          text-align:center
+        }
+
+        h2 {
+          text-align:center
+        }
+
+        form {
+          text-align: center;
         }
 
         .region {background-color:#4CAF50;} /* Green */
@@ -40,6 +62,7 @@
     <body style="background-color:#E8A87C;">
 
     <div class = "content">
+    <h1> The Pokemon Day Care Database </h1>
     <h2> Quick Information </h2>
       <form action ="http://css1.seattleu.edu/~ovallesisabe/dbweb/dbButton.php" method = "post">
         <button name = "query" class="button region" value = "select * from region">Regions</button>
@@ -68,21 +91,16 @@
     <p>
       <a href = "http://css1.seattleu.edu/~ovallesisabe/dbweb/dbRegister.html">
         <img src = "https://cdn2.bulbagarden.net/upload/thumb/e/e2/133Eevee.png/1200px-133Eevee.png" alt = "Eevee"
-             style = "width:400;height:400;"></a>
-      Click above to register new pokemon or eggs at the day care!
+             style = "width:200;height:200;"></a>
+      Click on Eevee to register new pokemon or eggs at the day care!
     </p>
 
-    <h2> Registering a New Region </h2>
-    <p>
-      <a href = "http://css1.seattleu.edu/~ovallesisabe/dbweb/dbRegister.html">
-        <img src = "https://www.serebii.net/Shiny/SWSH/831.png" alt = "Shiny Wooloo"
-             style = "width:400;height:400;"></a>
-      Click above to register a new region!
-    </p>
+    </br>
 
+    </br>
 
     <h2> Advanced Search </h2>
-    <p style = text-align: center;">
+    <p>
     Please enter your query:
     <br/>
     <form action  = "http://css1.seattleu.edu/~ovallesisabe/dbweb/dbAdv.php" method = "post">
