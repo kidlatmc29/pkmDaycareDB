@@ -41,15 +41,33 @@
   </p>
   <h2> New Pokemon </h2>
   <p> Please fill out the form to register a new pokemon in the database:
-     <form action = "http://css1.seattleu.edu/~ovallesisabe/dbweb/dbRegister.html">
+     <form action = "http://css1.seattleu.edu/~ovallesisabe/dbweb/dbRegister.php">
+       <label for ="did"> <b>Day Care ID</b> </label>
+       </br>
+       <input type = "number" placeholder="ex.) 1234" name = "did" id = "did" required>
+       </br>
+       <label for ="dexNum"> <b>National PokeDex Number</b> </label>
+       </br>
+       <input type = "number" placeholder="ex.) 001" name = "dexNum" id = "dexNum" required>
+       <br>
        <label for = "nickname"><b>Nickname</b></label> </br>
-       <input type = "text" placeholder = "Enter Pokemon's Nickname" name = "nickname"
+       <input type = "text" placeholder = "ex.) Sobbi" name = "nickname"
        id = "nickname">
        </br>
-       <label for = "species"> <b> Species </b> </label> </br>
-       <input type = "text" placeholder = "Enter Species" name = "species" id = "species" required>
+       <label for = "species"><b>Species</b></label> </br>
+       <input type = "text" placeholder = "ex.) Sobble" name = "species" id = "species" required>
        </br>
-       <button type = "submit" class="button"> Register</button>
+       <label for = ""><b>Shiny?</b></label> </br>
+       <input type = "text" placeholder = "Yes/No" name = "shiny" id = "shiny">
+       </br>
+       <label for = "gender"><b>Gender</b></label> </br>
+       <input type = "text" placeholder = "Female/Male/Unknown" name = "gender" id = "gender">
+       </br>
+       <label for = "region"><b>Origin Region</b></label> </br>
+       <input type = "text" placeholder = "ex.) Kanto" name = "region" id = "region" required>
+       </br>
+
+       <input type = "submit" value = "submit">
      </form>
   </p>
 

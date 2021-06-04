@@ -51,16 +51,9 @@ if (!$db) {
     exit;
 }
 
-// array of queries for certain stats of the day care
-
-$queries = array(
-  0 => "select count(distinct DID) as Total_Pokemon from pokemon"
-);
-
-$index = 0;
 
 // Total number of pokemon in the day care
-$query = $queries[0];
+$query = "select count(distinct DID) as Total_Pokemon from pokemon";
 
 $result = mysql_query($query);
 if (!$result) {
@@ -71,7 +64,7 @@ if (!$result) {
 }
 
 $num_rows = mysql_num_rows($result);
-print "Number of rows = $num_rows <br />";
+print "</br> Number of rows = $num_rows <br />";
 
 // Get the number of fields in the rows
 $num_fields = mysql_num_fields($result);
