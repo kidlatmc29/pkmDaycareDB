@@ -50,15 +50,16 @@ if (!$db) {
     exit;
 }
 
+/*
 $DID = $_POST['did'];
 $dexNum = $_POST['dexNum'];
 $nickname = $_POST['nickname'];
-$species = $_POST['species']
 $shiny = $_POST['shiny'];
 $gender = $POST['gender'];
 $region = $_POST['region'];
+*/
 
-$query = "insert into pokemon values ($DID, $dexNum, '$nickname', '$species', '$shiny', '$gender', '$region')";
+$query = $_POST['query'];
 
 trim($query);
 
