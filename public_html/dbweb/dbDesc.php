@@ -25,9 +25,9 @@
 
 <?php
 // Connect to MySQL
-$servername = "cssql.seattleu.edu";
-$username = "user18";
-$password = "1234";
+$servername = "";
+$username = "";
+$password = "";
 
 print $servername;
 
